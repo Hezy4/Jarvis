@@ -16,7 +16,7 @@ After that, just simply install the dependecies.
 run the following command in yuour computers terminal
 git clone https://github.com/henryboes25/Jarvis/
 cd jarvis
-pip3 install -r requirements.txt
+pip3 install -r deps.txt
 
 #after that
 
