@@ -18,18 +18,18 @@ git clone https://github.com/henryboes25/Jarvis/
 cd jarvis
 pip3 install -r deps.txt
 
-#after that
+# after that
 
 run the second to last step
 
 python3 download_model.py 345M
 
-#FINALLY
+# FINALLY
 run 
 
 python3 main.py
 
-#THIS project took a year of work. Spread it around!
+# THIS project took a year of work. Spread it around!
 
 For support
 
