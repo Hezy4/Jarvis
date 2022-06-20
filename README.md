@@ -15,7 +15,7 @@ After that, just simply install the dependecies.
 
 run the following command in yuour computers terminal
 
-it clone https://github.com/henryboes25/Jarvis/
+git clone https://github.com/henryboes25/Jarvis/
 
 cd jarvis
 
