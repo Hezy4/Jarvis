@@ -13,7 +13,7 @@ A video will be linked here: https://www.youtube.com/watch?v=sIan8TOz0GA
 
 After that, just simply install the dependecies. 
 
-run the following command in yuour computers terminal
+run the following command in your computers terminal
 
 git clone https://github.com/henryboes25/Jarvis/
 
