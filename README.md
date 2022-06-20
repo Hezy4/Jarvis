@@ -14,8 +14,11 @@ A video will be linked here: https://www.youtube.com/watch?v=sIan8TOz0GA
 After that, just simply install the dependecies. 
 
 run the following command in yuour computers terminal
-git clone https://github.com/henryboes25/Jarvis/
+
+it clone https://github.com/henryboes25/Jarvis/
+
 cd jarvis
+
 pip3 install -r deps.txt
 
 # after that
