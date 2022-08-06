@@ -1,8 +1,6 @@
 # Jarvis
 An AI using GPT-2 and tensorflow
 
-This project is for TESTING
-
 # Version 1.1 
 
 Added hotword detection (only works if 'Jarvis' is in the sentence) to ignore background convorsations.
