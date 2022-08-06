@@ -11,7 +11,6 @@ Added hotword detection (only works if 'Jarvis' is in the sentence) to ignore ba
 
 # BEFORE FIRST STARTUP
 <sub>python3 download_model 345M</sub>
-before startup the first time ONLY
 
 # For support
 
