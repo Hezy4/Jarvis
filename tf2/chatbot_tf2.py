@@ -62,32 +62,30 @@ def interact_model(
         while True:
             with sr.Microphone() as source:
                 r = sr.Recognizer()
-                hot_word='Jarvis'
                 r.pause_threshold=1
                 audio=r.listen(source)
                 input_utt = r.recognize_google(audio)
                 raw_text +='\n' + 'You: '+ input_utt + '\n' + 'Jarvis: '
-                if hot_word in input_utt:
-                    contxt_tokens = enc.encode(raw_text)
-                    print('Recognizing:')
-                    for _ in range(nsamples // batch_size):
-                        out = sess.run(output, feed_dict={
-                        contxt: [contxt_tokens for _ in range(batch_size)]
-                    })[:, len(contxt_tokens):]
+                contxt_tokens = enc.encode(raw_text)
+                print('Recognizing:')
+                for _ in range(nsamples // batch_size):
+                    out = sess.run(output, feed_dict={
+                    contxt: [contxt_tokens for _ in range(batch_size)]
+                })[:, len(contxt_tokens):]
                 
-                        for i in range(batch_size):
-                            text = enc.decode(out[i])
-                            result=list(text.partition('\n'))
-                            print('You said:- ' + r.recognize_google(audio))
-                            print('Jarvis:' + result[0])
-                            raw_text += str(result[0])
-                            engine.say(result[0])
-                            engine.runAndWait()
-                            if sr.UnknownValueError:
-                                print('Speak Now:')
-                                engine.runAndWait
-            try:
-                engine.runAndWait
-            except sr.UnknownValueError:
-                engine.runAndWait
+                    for i in range(batch_size):
+                        text = enc.decode(out[i])
+                        result=list(text.partition('\n'))
+                        print('You said:- ' + r.recognize_google(audio))
+                        print('Jarvis:' + result[0])
+                        raw_text += str(result[0])
+                        engine.say(result[0])
+                        engine.runAndWait()
+                        if sr.UnknownValueError:
+                            print('Speak Now:')
+                            engine.runAndWait
+        try:
+            engine.runAndWait
+        except sr.UnknownValueError:
+            engine.runAndWait
     
