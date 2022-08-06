@@ -8,12 +8,17 @@ This project is for TESTING
 Added hotword detection (only works if 'Jarvis' is in the sentence) to ignore background convorsations.
 
 # THIS project took a year of work. Spread it around!
-
-# BEFORE FIRST STARTUP
+# Installation
 ```
+git clone https://github.com/hezyhax/jarvis.git
+cd jarvis
+python3 -m pip install -r requirements.txt
 python3 download_model.py 345M
 ```
-
+# Run Jarvis
+```
+python3 main.py
+```
 # For support
 
 Hezycb@gmail.com
