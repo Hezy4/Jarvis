@@ -11,7 +11,7 @@ Added hotword detection (only works if 'Jarvis' is in the sentence) to ignore ba
 
 # BEFORE FIRST STARTUP
 ```
-python3 download_model 345M
+python3 download_model.py 345M
 ```
 
 # For support
