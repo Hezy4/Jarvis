@@ -21,7 +21,6 @@ engine.setProperty('volume',1.0)
 """VOICE"""
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
-
 def interact_model(
     temperature,
     top_k,
@@ -37,9 +36,9 @@ def interact_model(
         batch_size = 1
     assert nsamples % batch_size == 0
 
-    enc = encoder.get_encoder('345M_org', models_dir)
+    enc = encoder.get_encoder('345M', models_dir)
     hparams = model.default_hparams()
-    with open(os.path.join('./models', '345M_org', 'hparams.json')) as f:
+    with open(os.path.join('./models', '345M', 'hparams.json')) as f:
         hparams.update(json.load(f))
 
     with tf.compat.v1.Session(graph=tf.Graph()) as sess:
@@ -54,42 +53,37 @@ def interact_model(
         )
 
         saver = tf.compat.v1.train.Saver()
-        ckpt = tf.train.latest_checkpoint(os.path.join('./models', '345M_org'))
+        ckpt = tf.train.latest_checkpoint(os.path.join('./models', '345M'))
         saver.restore(sess, ckpt)
 
         raw_text = '<|endofdlg|>'
-        print('#' * 20 + ' Start ' + '#' * 20)
+        print('#' * 20 + ' Start Speaking ' + '#' * 20)
         while True:
             with sr.Microphone() as source:
                 r = sr.Recognizer()
-                r.pause_threshold=1
+                #edit Jarvis to any name you'd like.
+                hot_word='Jarvis'
+                r.pause_threshold=2#This waits for 5 sec after voice ends
                 audio=r.listen(source)
                 input_utt = r.recognize_google(audio)
                 raw_text +='\n' + 'You: '+ input_utt + '\n' + 'Jarvis: '
-                contxt_tokens = enc.encode(raw_text)
-                print('Recognizing:')
-                for _ in range(nsamples // batch_size):
-                    out = sess.run(output, feed_dict={
-                    contxt: [contxt_tokens for _ in range(batch_size)]
-                })[:, len(contxt_tokens):]
+                if hot_word in input_utt:
+                    contxt_tokens = enc.encode(raw_text)
+                    print('Recognizing:')
+                    for _ in range(nsamples // batch_size):
+                        out = sess.run(output, feed_dict={
+                        contxt: [contxt_tokens for _ in range(batch_size)]
+                    })[:, len(contxt_tokens):]
                 
-                    for i in range(batch_size):
-                        text = enc.decode(out[i])
-                        result=list(text.partition('\n'))
-                        print('You said:- ' + r.recognize_google(audio))
-                        print('Jarvis:' + result[0])
-                        raw_text += str(result[0])
-                        engine.say(result[0])
-                        engine.runAndWait()
-                        True
-                        if sr.UnknownValueError:
-                            print('Speak Now:')
+                        for i in range(batch_size):
+                            text = enc.decode(out[i])
+                            result=list(text.partition('\n'))
+                            print('You said:- ' + r.recognize_google(audio))
+                            print('Jarvis:' + result[0])
+                            raw_text += str(result[0])
+                            engine.say(result[0])
                             engine.runAndWait()
-                            True
-            try:
-                engine.runAndWait()
-                True
-            except sr.UnknownValueError:
-                engine.runAndWait()
-                True
+                            if sr.UnknownValueError:
+                                print('Did not compute, please retry')
+                                engine.runAndWait
     
