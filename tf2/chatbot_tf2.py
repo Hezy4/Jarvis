@@ -81,11 +81,15 @@ def interact_model(
                         raw_text += str(result[0])
                         engine.say(result[0])
                         engine.runAndWait()
+                        True
                         if sr.UnknownValueError:
                             print('Speak Now:')
                             engine.runAndWait
+                            True
             try:
                 engine.runAndWait
+                True
             except sr.UnknownValueError:
                 engine.runAndWait
+                True
     
