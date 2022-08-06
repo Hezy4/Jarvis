@@ -4,3 +4,4 @@ numpy
 json
 pyaudio
 speechrecogntion
+tqdm
