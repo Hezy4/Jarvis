@@ -7,7 +7,7 @@ This project is for TESTING
 
 Added hotword detection (only works if 'Jarvis' is in the sentence) to ignore background convorsations.
 
-# THIS project took a year of work. Spread it around!
+# This project took a year of work. Spread it around!
 # Installation
 ```
 git clone https://github.com/hezyhax/jarvis.git
