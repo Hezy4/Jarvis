@@ -3,7 +3,7 @@ An AI using GPT-2 and tensorflow
 
 # Version 1.1 
 
-Added hotword detection (only works if 'Jarvis' is in the sentence) to ignore background convorsations.
+Added hotword detection (only works if 'Jarvis' is in the sentence) to ignore background noise.
 
 # This project took a year of work. Spread it around!
 # Installation
