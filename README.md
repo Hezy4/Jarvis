@@ -12,7 +12,7 @@ Added hotword detection (only works if 'Jarvis' is in the sentence) to ignore ba
 ```
 git clone https://github.com/hezyhax/jarvis.git
 cd jarvis
-python3 -m pip install -r requirements.txt
+python3 -m pip install -r deps.txt
 python3 download_model.py 345M
 ```
 # Run Jarvis
