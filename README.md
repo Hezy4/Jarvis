@@ -20,5 +20,6 @@ python3 download_model.py 345M
 python3 main.py
 ```
 # For support
-
+Please look online for supoort first, the internet will solve most problems
+If you're still experiencing difficulty, please kindly email:
 Hezycb@gmail.com
