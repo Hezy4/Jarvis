@@ -10,7 +10,7 @@ Added hotword detection (only works if 'Jarvis' is in the sentence) to ignore ba
 # THIS project took a year of work. Spread it around!
 
 # BEFORE FIRST STARTUP
-python3 download_model 345M
+<sub>python3 download_model 345M</sub>
 before startup the first time ONLY
 
 # For support
