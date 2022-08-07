@@ -84,6 +84,6 @@ def interact_model(
                             engine.say(result[0])
                             engine.runAndWait()
                             if sr.UnknownValueError:
-                                print('Did not compute, please retry')
+                                print('Speak Now:')
                                 engine.runAndWait
     
