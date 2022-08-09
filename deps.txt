@@ -2,6 +2,7 @@ tensorflow
 argparse
 numpy
 json
+pyttsx3
 pyaudio
 speechrecogntion
 tqdm
