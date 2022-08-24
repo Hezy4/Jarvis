@@ -18,13 +18,13 @@ parser.add_argument('--top_k', type=int, default=1,
 parser.add_argument('--top_p', type=int, default=1,
                     help='set sum probability p that only words exceeding p are put in the candidate')
 
-parser.add_argument('--temperature', type=float, default=0.9,
+parser.add_argument('--temperature', type=float, default=0.5,
                     help='write flexibly if the temperature is high, and write statically if the temperature is low (0.0 ~ 1.0)')
 
 parser.add_argument('--batch_size', type=int, default=1,
                     help='set the batch size')
 
-parser.add_argument('--length', type=int, default=30,
+parser.add_argument('--length', type=int, default=35,
                     help='set the response maximum number of length')
 args = parser.parse_args()
 
