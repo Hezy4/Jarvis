@@ -1,9 +1,9 @@
 # Jarvis
 An AI using GPT-2 and tensorflow
 
-# Version 1.1 
+# Version 2
 
-Added hotword detection (only works if 'Jarvis' is in the sentence) to ignore background noise.
+Added the 1558M parameter option, updated args
 
 # This project took a year of work. Spread it around!
 # Installation
@@ -20,6 +20,10 @@ python3 download_model.py 345M
 If it is more equiped, run:
 ```
 python3 download_model.py 774M
+```
+if youre really feeling it, 
+```
+python3 download_model.py 1558M
 ```
 Then, you're ready to run Jarvis. 
 # Run Jarvis
