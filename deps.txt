@@ -1,8 +1,8 @@
 tensorflow
 argparse
 numpy
-json
 pyttsx3
 pyaudio
-speechrecogntion
+speechrecognition
 tqdm
+regex
